@@ -2937,13 +2937,8 @@ function pnotifyMessage(message) {
   });
 }
 
-function onError(error) {
-  return pnotifyMessage(error);
-}
-
 function onInput(e) {
   var searchQuery = e.target.value;
-  console.log(searchQuery);
   refs.countryContainer.innerHTML = '';
 
   _fetchCountries.default.fetchCountries(searchQuery).then(function (data) {
@@ -2956,7 +2951,7 @@ function onInput(e) {
     } else if (data.length >= 2 && data.length <= 19) {
       refs.countryContainer.insertAdjacentHTML('beforeend', createCountriesList(data));
     }
-  }).catch(onError).finally(function () {
+  }).finally(function () {
     return refs.searchInput.innerHTML = ' ';
   });
 }
@@ -2990,7 +2985,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58503" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59442" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
